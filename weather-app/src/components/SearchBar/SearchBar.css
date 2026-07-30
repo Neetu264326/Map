@@ -1,0 +1,124 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease 0.2s both;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 0 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--glass-shadow);
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow), 0 0 20px var(--accent-glow), var(--glass-shadow);
+}
+
+.search-icon {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-right: 0.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.search-input-wrapper:focus-within .search-icon {
+  color: var(--accent);
+  animation: bounce 0.4s ease;
+}
+
+.search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0.85rem 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+.search-input:focus::placeholder {
+  color: transparent;
+}
+
+.search-clear {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.3rem;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-clear:hover {
+  color: var(--text-primary);
+  background: var(--glass-bg);
+  transform: scale(1.1);
+}
+
+.search-clear:active {
+  transform: scale(0.9);
+}
+
+.location-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid var(--glass-border);
+  color: var(--accent);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  flex-shrink: 0;
+  box-shadow: var(--glass-shadow);
+}
+
+.location-btn:hover:not(:disabled) {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: scale(1.12) rotate(-12deg);
+  box-shadow: 0 4px 20px var(--accent-glow), var(--glass-shadow);
+}
+
+.location-btn:active:not(:disabled) {
+  transform: scale(0.95) rotate(-12deg);
+}
+
+.location-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
